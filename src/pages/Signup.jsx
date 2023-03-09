@@ -1,117 +1,131 @@
 import React from 'react'
-import login_logo from '../assets/images/login-page-img.png'
-import { useRef, useState } from "react";
+import { Link } from 'react-router-dom';
+import { useState } from "react";
 import { GrFormClose } from "react-icons/gr";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import logo from '../assets/images/tandem_logo.svg'
 
 const Signup = () => {
 
     const [toggle, setToggle] = useState(false);
-    const [error, setError] = useState("User already exist.");
+    const [error, setError] = useState("");
+    const [msg, setMsg] = useState("Registration success!")
 
     const [eye, setEye] = useState(false);
     const [ceye, csetEye] = useState(false);
 
+
+
     return (
 
-        <section className="font-Poppins w-full h-screen bg-gray-200 flex flex-col justify-center items-center">
+        <div className='bg-gray-200 py-5 px-5'>
+            <Link to={"/"}>
+                <img className='' src={logo} alt="tandem_img" />
+            </Link>
 
-            <form
-                method="post"
-                className="registration-details flex flex-col items-center space-y-4 w-full"
-            >
+            <section className="font-Poppins w-full h-[calc(100vh-78px)] flex flex-col justify-center items-center">
 
-                <img
-                    className="w-40 tab:w-48 lap:w-52 rounded-full"
-                    src={login_logo}
-                    alt="logo-img"
-                />
+                <div className='bg-gray-100 py-5 px-10 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
+                    <form
+                        method="post"
+                        className="registration-details flex flex-col items-center space-y-4 w-full"
+                    >
 
-
-
-                <input
-                    className="bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide outline-none border hover:border-1 hover:border-gray-700 "
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="Email"
-                />
-
-                <div className='flex justify-between items-center bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide border hover:border-1 hover:border-gray-700'>
-                    <input
-                        className='outline-none bg-transparent w-full'
-                        type={eye ? 'text' : 'password'}
-                        name="pwd"
-                        required
-                        placeholder="Create new password"
-                    />
-                    {
-                        eye ? <AiOutlineEyeInvisible className='w-5 h-5 cursor-pointer' onClick={() => setEye(false)} /> : <AiOutlineEye className='w-5 h-5 cursor-pointer' onClick={() => setEye(true)} />
-                    }
-                </div>
-
-                <div className='flex justify-between items-center bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide border hover:border-1 hover:border-gray-700'>
-                    <input
-                        className='outline-none bg-transparent w-full'
-                        type={eye ? 'text' : 'password'}
-                        name="pwd"
-                        required
-                        placeholder="Confirm new password"
-                    />
-                    {
-                        ceye ? <AiOutlineEyeInvisible className='w-5 h-5 cursor-pointer' onClick={() => csetEye(false)} /> : <AiOutlineEye className='w-5 h-5 cursor-pointer' onClick={() => csetEye(true)} />
-                    }
-                </div>
-
-                {/* <select
-                    id="type-signup"
-                    required
-                    className="bg-gray-50 text-sm rounded-md font-Poppins tracking-wide text-gray-400 focus:ring-blue-500 focus:border-blue-500 block shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] px-4 w-60 tab:w-64 lap:w-72 h-10"
-                    defaultValue={'DEFAULT'}
-                >
-                    <option value="DEFAULT" disabled hidden>
-                        Login as
-                    </option>
-
-                    <option className="text-gray-700 font-Poppins" value="2">
-                        Business
-                    </option>
-                </select> */}
+                        <h1 className='text-3xl lap:text-5xl font-semibold mb-5'>Sign Up</h1>
 
 
-                {/* Error message */}
-                {error && <div className={`${toggle ? "hidden" : ""}`}>
-                    <div className={`flex justify-between w-60 tab:w-64 lap:w-72 px-2 py-1 h-fit border border-1 border-red-900`}>
-                        <div className='flex items-center'>
-                            <label htmlFor="" className='text-red-600 font-semibold text-xs mr-1.5'>Error: </label>
-                            <p className='text-red-500 font-normal text-xs'>{error}</p>
+
+                        <input
+                            className="bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide outline-none border hover:border-1 hover:border-gray-700 "
+                            type="email"
+                            name="email"
+                            required
+                            placeholder="Email"
+                        />
+
+                        <div className='flex justify-between items-center bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide border hover:border-1 hover:border-gray-700'>
+                            <input
+                                className='outline-none bg-transparent w-full'
+                                type={eye ? 'text' : 'password'}
+                                name="pwd"
+                                required
+                                placeholder="Create new password"
+
+                            />
+                            {
+                                eye ? <AiOutlineEye className='w-5 h-5 cursor-pointer' onClick={() => setEye(false)} /> : <AiOutlineEyeInvisible className='w-5 h-5 cursor-pointer' onClick={() => setEye(true)} />
+                            }
+
                         </div>
-                        <button onClick={() => { setToggle(!toggle); setError("") }}>
-                            <GrFormClose className='text-xl my-auto' />
+
+
+
+                        <div className='flex justify-between items-center bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide border hover:border-1 hover:border-gray-700'>
+                            <input
+                                className='outline-none bg-transparent w-full'
+                                type={eye ? 'text' : 'password'}
+                                name="pwd"
+                                required
+                                placeholder="Confirm new password"
+
+                            />
+                            {
+                                ceye ? <AiOutlineEye className='w-5 h-5 cursor-pointer' onClick={() => setEye(false)} /> : <AiOutlineEyeInvisible className='w-5 h-5 cursor-pointer' onClick={() => setEye(true)} />
+                            }
+
+                        </div>
+
+
+                        {/* Error message */}
+
+                        <div>
+                            {error && <div className={`${toggle ? "hidden" : ""}`}>
+                                <div className={`flex justify-between w-60 tab:w-64 lap:w-72 px-2 py-1 h-fit border border-1 border-red-900`}>
+                                    <div className='flex items-center'>
+                                        <label htmlFor="" className='text-red-600 font-semibold text-xs mr-1.5'>Error: </label>
+                                        <p className='text-red-500 font-normal text-xs'>{error}</p>
+                                    </div>
+                                    <button onClick={() => { setToggle(!toggle); setError("") }}>
+                                        <GrFormClose className='text-xl my-auto' />
+                                    </button>
+
+                                </div>
+                            </div>}
+
+                            {msg && <div className={`${toggle ? "hidden" : ""}`}>
+                                <div className={`flex justify-between w-60 tab:w-64 lap:w-72 px-2 py-1 h-fit border border-1 border-green-900`}>
+                                    <div className='flex items-center'>
+                                        <label htmlFor="" className='text-green-600 font-semibold text-xs mr-1.5'>Success: </label>
+                                        <p className='text-green-500 font-normal text-xs'>{msg}</p>
+                                    </div>
+                                    <button onClick={() => { setToggle(!toggle); setMsg("") }}>
+                                        <GrFormClose className='text-xl my-auto' />
+                                    </button>
+
+                                </div>
+                            </div>}
+
+                        </div>
+
+                        <button
+                            className="bg-[#15213A] hover:bg-[#1e3055] shadow-lg shadow-blue-900/70 hover:shadow-blue-900/40 text-gray-300 w-60 tab:w-64 lap:w-72 h-9 mx-auto rounded-md font-Poppins tracking-wide"
+                            type="submit"
+                            name="login_button"
+
+                        >
+                            Sign up
                         </button>
 
-                    </div>
-                </div>}
+                        <p className='text-smF'>Already have an account? <Link className='text-blue-900 hover:text-blue-600 hover:underline text-sm' to={"/login"}>Login here</Link></p>
+
+                    </form>
 
 
-                <button
-                    className="bg-[#15213A] hover:bg-[#1e3055] shadow-lg shadow-blue-900/70 hover:shadow-blue-900/40 text-gray-300 w-60 tab:w-64 lap:w-72 h-9 mx-auto rounded-md font-Poppins tracking-wide"
-                    type="submit"
-                    name="login_button"
 
-                >
-                    Sign up
-                </button>
-            </form>
-            <a
-                className="mx-auto mt-2 text-sm hover:underline hover:text-blue-600 font-Poppins  text-gray-600 placeholder:tracking-wide"
-                href="/login.html"
-            >
-                Already have an account? Login here
-            </a>
-        </section>
+                </div>
+            </section>
 
-
+        </div>
     )
 }
 
