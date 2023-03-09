@@ -21,11 +21,11 @@ const Signup = () => {
                 className="registration-details flex flex-col items-center space-y-4 w-full"
             >
 
-                {/* <img
+                <img
                     className="w-40 tab:w-48 lap:w-52 rounded-full"
                     src={login_logo}
                     alt="logo-img"
-                /> */}
+                />
 
 
 
