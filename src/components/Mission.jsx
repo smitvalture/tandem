@@ -3,8 +3,8 @@ import mission_img from '../assets/images/our_mission_img.svg'
 
 const Mission = () => {
     return (
-        <div>
-            <section id="mission" className="text-[#15213A] flex flex-col justify-center items-center">
+        <div id="mission">
+            <section className="text-[#15213A] flex flex-col justify-center items-center">
                 <h1 className="text-2xl lap:text-4xl font-semibold mt-16 lap:mt-24">
                     Our mission
                 </h1>
