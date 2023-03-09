@@ -2,6 +2,7 @@ import React from 'react'
 import login_logo from '../assets/images/login-page-img.png'
 import { GrFormClose } from "react-icons/gr";
 import { useRef, useState } from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 
 
@@ -10,7 +11,9 @@ import { useRef, useState } from "react";
 const Login = () => {
 
     const [toggle, setToggle] = useState(false);
-    const [error, setError] = useState("There is an error while loggging in.");
+    const [error, setError] = useState("");
+
+    const [eye, setEye] = useState(false);
     // console.log(error);
 
     return (
@@ -19,20 +22,25 @@ const Login = () => {
             <section className='flex flex-col items-center space-y-4 w-72'>
                 <img className='w-40 tab:w-48 lap:w-52 rounded-full' src={login_logo} alt="login-img" />
                 <input
-                    className="bg-gray-50 focus:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-5 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide "
+                    className="bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide outline-none border hover:border-1 hover:border-gray-700"
                     type="email"
                     name="email"
                     required
                     placeholder="Enter your email or phone no."
                 />
 
-                <input
-                    className="bg-gray-50 focus:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-5 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide "
-                    type="pasword"
-                    name="pwd"
-                    required
-                    placeholder="Password"
-                />
+                <div className='flex justify-between items-center bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide border hover:border-1 hover:border-gray-700'>
+                    <input
+                        className='outline-none bg-transparent w-full'
+                        type={eye ? 'text' : 'password'}
+                        name="pwd"
+                        required
+                        placeholder="Password"
+                    />
+                    {
+                        eye ? <AiOutlineEyeInvisible className='w-5 h-5 cursor-pointer' onClick={() => setEye(false)} /> : <AiOutlineEye className='w-5 h-5 cursor-pointer' onClick={() => setEye(true)} />
+                    }
+                </div>
 
 
 
@@ -65,18 +73,20 @@ const Login = () => {
                 </div>
 
                 {/* Error message */}
-                <div className={`${toggle ? "hidden" : ""}`}>
-                    <div className={`flex justify-between w-60 tab:w-64 lap:w-72 px-2 py-1 h-fit border border-1 border-red-900`}>
-                        <div className='flex items-center'>
-                            <label htmlFor="" className='text-red-600 font-semibold text-xs mr-1.5'>Error: </label>
-                            <p className='text-red-500 font-normal text-xs'>{error}</p>
-                        </div>
-                        <button onClick={() => { setToggle(!toggle); setError("") }}>
-                            <GrFormClose className='text-xl my-auto' />
-                        </button>
+                {
+                    error && <div className={`${toggle ? "hidden" : ""}`}>
+                        <div className={`flex justify-between w-60 tab:w-64 lap:w-72 px-2 py-1 h-fit border border-1 border-red-900`}>
+                            <div className='flex items-center'>
+                                <label htmlFor="" className='text-red-600 font-semibold text-xs mr-1.5'>Error: </label>
+                                <p className='text-red-500 font-normal text-xs'>{error}</p>
+                            </div>
+                            <button onClick={() => { setToggle(!toggle); setError("") }}>
+                                <GrFormClose className='text-xl my-auto' />
+                            </button>
 
+                        </div>
                     </div>
-                </div>
+                }
 
 
                 <button
