@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Source+Sans+Pro&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero_bg {
+  background-image: url("./assets/images/hero_bg1.svg");
+}
+
+.hero_bg2 {
+  background-image: url("./assets/images/hero_bg2.png");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
