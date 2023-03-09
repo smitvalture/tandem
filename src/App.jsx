@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <Signup />
-      {/* <Login /> */}
+      <Login />
       {/* <Landing /> */}
     </div>
   );

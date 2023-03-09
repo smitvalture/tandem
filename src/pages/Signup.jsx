@@ -2,11 +2,15 @@ import React from 'react'
 import login_logo from '../assets/images/login-page-img.png'
 import { useRef, useState } from "react";
 import { GrFormClose } from "react-icons/gr";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const Signup = () => {
 
     const [toggle, setToggle] = useState(false);
     const [error, setError] = useState("User already exist.");
+
+    const [eye, setEye] = useState(false);
+    const [ceye, csetEye] = useState(false);
 
     return (
 
@@ -17,35 +21,47 @@ const Signup = () => {
                 className="registration-details flex flex-col items-center space-y-4 w-full"
             >
 
-                <img
+                {/* <img
                     className="w-40 tab:w-48 lap:w-52 rounded-full"
                     src={login_logo}
                     alt="logo-img"
-                />
+                /> */}
+
+
 
                 <input
-                    className="bg-gray-50 focus:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-5 w-60 tab:w-64 lap:w-72 h-10 placeholder:font-Poppins placeholder:tracking-wide "
+                    className="bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide outline-none border hover:border-1 hover:border-gray-700 "
                     type="email"
                     name="email"
                     required
                     placeholder="Email"
                 />
 
-                <input
-                    className="bg-gray-50 focus:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-5 w-60 tab:w-64 lap:w-72 h-10 placeholder:font-Poppins placeholder:tracking-wide "
-                    type="password"
-                    name="pwd"
-                    required
-                    placeholder="Create new password"
-                />
+                <div className='flex justify-between items-center bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide border hover:border-1 hover:border-gray-700'>
+                    <input
+                        className='outline-none bg-transparent w-full'
+                        type={eye ? 'text' : 'password'}
+                        name="pwd"
+                        required
+                        placeholder="Create new password"
+                    />
+                    {
+                        eye ? <AiOutlineEyeInvisible className='w-5 h-5 cursor-pointer' onClick={() => setEye(false)} /> : <AiOutlineEye className='w-5 h-5 cursor-pointer' onClick={() => setEye(true)} />
+                    }
+                </div>
 
-                <input
-                    className="bg-gray-50 focus:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-5 w-60 tab:w-64 lap:w-72 h-10 placeholder:font-Poppins placeholder:tracking-wide "
-                    type="confirm-password"
-                    name="confirm_pwd"
-                    required
-                    placeholder="Confirm new Password"
-                />
+                <div className='flex justify-between items-center bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide border hover:border-1 hover:border-gray-700'>
+                    <input
+                        className='outline-none bg-transparent w-full'
+                        type={eye ? 'text' : 'password'}
+                        name="pwd"
+                        required
+                        placeholder="Confirm new password"
+                    />
+                    {
+                        ceye ? <AiOutlineEyeInvisible className='w-5 h-5 cursor-pointer' onClick={() => csetEye(false)} /> : <AiOutlineEye className='w-5 h-5 cursor-pointer' onClick={() => csetEye(true)} />
+                    }
+                </div>
 
                 {/* <select
                     id="type-signup"
@@ -64,7 +80,7 @@ const Signup = () => {
 
 
                 {/* Error message */}
-                <div className={`${toggle ? "hidden" : ""}`}>
+                {error && <div className={`${toggle ? "hidden" : ""}`}>
                     <div className={`flex justify-between w-60 tab:w-64 lap:w-72 px-2 py-1 h-fit border border-1 border-red-900`}>
                         <div className='flex items-center'>
                             <label htmlFor="" className='text-red-600 font-semibold text-xs mr-1.5'>Error: </label>
@@ -75,7 +91,7 @@ const Signup = () => {
                         </button>
 
                     </div>
-                </div>
+                </div>}
 
 
                 <button
