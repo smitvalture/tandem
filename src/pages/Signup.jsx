@@ -1,18 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useState } from "react";
-import { GrFormClose } from "react-icons/gr";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import logo from '../assets/images/tandem_logo.svg'
+import Alerts from '../components/Alerts';
 
 const Signup = () => {
 
-    const [toggle, setToggle] = useState(false);
-    const [error, setError] = useState("");
-    const [msg, setMsg] = useState("Registration success!")
-
     const [eye, setEye] = useState(false);
-    const [ceye, csetEye] = useState(false);
+    // const [ceye, csetEye] = useState(false);
 
 
 
@@ -28,7 +24,7 @@ const Signup = () => {
                 <div className='bg-gray-100 py-5 px-10 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
                     <form
                         method="post"
-                        className="registration-details flex flex-col items-center space-y-4 w-full"
+                        className="registration-details flex flex-col items-center space-y-4 w-[290px]"
                     >
 
                         <h1 className='text-3xl lap:text-5xl font-semibold mb-5'>Sign Up</h1>
@@ -70,7 +66,7 @@ const Signup = () => {
 
                             />
                             {
-                                ceye ? <AiOutlineEye className='w-5 h-5 cursor-pointer' onClick={() => setEye(false)} /> : <AiOutlineEyeInvisible className='w-5 h-5 cursor-pointer' onClick={() => setEye(true)} />
+                                eye ? <AiOutlineEye className='w-5 h-5 cursor-pointer' onClick={() => setEye(false)} /> : <AiOutlineEyeInvisible className='w-5 h-5 cursor-pointer' onClick={() => setEye(true)} />
                             }
 
                         </div>
@@ -79,31 +75,10 @@ const Signup = () => {
                         {/* Error message */}
 
                         <div>
-                            {error && <div className={`${toggle ? "hidden" : ""}`}>
-                                <div className={`flex justify-between w-60 tab:w-64 lap:w-72 px-2 py-1 h-fit border border-1 border-red-900`}>
-                                    <div className='flex items-center'>
-                                        <label htmlFor="" className='text-red-600 font-semibold text-xs mr-1.5'>Error: </label>
-                                        <p className='text-red-500 font-normal text-xs'>{error}</p>
-                                    </div>
-                                    <button onClick={() => { setToggle(!toggle); setError("") }}>
-                                        <GrFormClose className='text-xl my-auto' />
-                                    </button>
+                            
+                            <Alerts msg="Success" des="Registration successful" type="success" closable />
 
-                                </div>
-                            </div>}
-
-                            {msg && <div className={`${toggle ? "hidden" : ""}`}>
-                                <div className={`flex justify-between w-60 tab:w-64 lap:w-72 px-2 py-1 h-fit border border-1 border-green-900`}>
-                                    <div className='flex items-center'>
-                                        <label htmlFor="" className='text-green-600 font-semibold text-xs mr-1.5'>Success: </label>
-                                        <p className='text-green-500 font-normal text-xs'>{msg}</p>
-                                    </div>
-                                    <button onClick={() => { setToggle(!toggle); setMsg("") }}>
-                                        <GrFormClose className='text-xl my-auto' />
-                                    </button>
-
-                                </div>
-                            </div>}
+                            
 
                         </div>
 
@@ -116,7 +91,7 @@ const Signup = () => {
                             Sign up
                         </button>
 
-                        <p className='text-smF'>Already have an account? <Link className='text-blue-900 hover:text-blue-600 hover:underline text-sm' to={"/login"}>Login here</Link></p>
+                        <p className='text-sm'>Already have an account? <Link className='text-blue-900 hover:text-blue-600 hover:underline text-sm' to={"/login"}>Login here</Link></p>
 
                     </form>
 
