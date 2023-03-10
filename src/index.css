@@ -12,6 +12,12 @@ html {
   background-image: url("./assets/images/hero_bg2.png");
 }
 
+nav a.active {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  background-color: red
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

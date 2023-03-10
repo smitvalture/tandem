@@ -12,7 +12,7 @@ const Dashboard = () => {
     <div className='bg-gray-100 font-Poppins'>
       <Dash_sidebar />
       <Routes>
-        <Route path='/dashboard_home' element={<Dash />} />
+        <Route path='/dashboard' element={<Dash />} />
         <Route path='/business-profile' element={<Biz_dash />} />
         <Route path='/contact-us' element={<Contact_dash />} />
         <Route path='/billing' element={<Bill_dash />} />

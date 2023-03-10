@@ -10,34 +10,22 @@ import Biz_dash from "./components/Biz_dash";
 import Bill_dash from "./components/Bill_dash";
 import Contact_dash from "./components/Contact_dash";
 import Refer_dash from "./components/Refer_dash";
+import AddEmployeePopUp from "./components/AddEmployeePopUp";
 
 function App() {
   return (
     <div>
+<AddEmployeePopUp />
 
-        <Dash_sidebar />
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Landing />} />
-        {/* <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" element={<Dashboard />} /> */}
-
         <Route path='/dashboard' element={<Dash />} />
         <Route path='/business-profile' element={<Biz_dash />} />
-        <Route path='/contact-us' element={<Contact_dash />} />
         <Route path='/billing' element={<Bill_dash />} />
+        <Route path='/contact-us' element={<Contact_dash />} />
         <Route path='/refer' element={<Refer_dash />} />
-      </Routes>
-
-
-      {/* <Dash_sidebar />
-      
-      <Routes>
-        <Route path='/dash' element={<Dash />} />
-        <Route path='/business-profile' element={<Biz_dash />} />
-        <Route path='/billing' element={<Bill_dash />} />
-        <Route path='/contact-us' element={<Contact_dash />} />
-        <Route path='/refer' element={<Refer_dash />} /> 
       </Routes> */}
     </div>
   );
