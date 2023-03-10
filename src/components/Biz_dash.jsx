@@ -15,7 +15,7 @@ const Biz_dash = () => {
             <Dash_sidebar />
 
 
-{/* Business profile */}
+            {/* Business profile */}
             <div className="ml-60">
                 <div>
                     <h1 className="text-xl font-semibold border border-1 border-gray-300 bg-white pl-4 py-4 shadow-[rgba(21,_21,_21,_0.5)_0px_0px_2px] font-SourceSansPro">
@@ -24,7 +24,7 @@ const Biz_dash = () => {
                     <div className='py-10 px-10'>
                         <div className="text-left min-w-max bg-white rounded-3xl py-10 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
                             {/* Form */}
-                            <form action="" method="post">
+                            <form method="post">
                                 <div className="flex flex-row justify-center">
                                     {/* Company details */}
                                     <div className="grid grid-cols-2 space-y-1 py-6 pr-10">
@@ -36,118 +36,114 @@ const Biz_dash = () => {
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="companyName"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                         <p>Company Email: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="email"
                                             name="companyEmail"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                         <p>Company Phone: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="tel"
                                             name="companyPhone"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                         <p>Company WebSite: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="url"
                                             name="CompanyWebSite"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                         <p>Business Type: </p>
                                         <select
                                             id="type-signup"
-                                            required=""
+                                            required
+                                            defaultValue={'DEFAULT'}
                                             className="text-sm rounded-md font-Poppins tracking-wide text-gray-400 focus:ring-blue-500 focus:border-blue-500 block border-2 border-gray-200 w-full h-8 m-auto"
                                         >
-                                            <option value="" disabled="" selected="" hidden="">
+                                            <option disabled value={'DEFAULT'} hidden>
                                                 Choose Business type
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'1'} className="text-gray-700 font-Poppins">
                                                 Private Limited Company
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'2'} className="text-gray-700 font-Poppins">
                                                 Public Limited Company
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'3'} className="text-gray-700 font-Poppins">
                                                 Partnerships Company
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'4'} className="text-gray-700 font-Poppins">
                                                 Limited Liability Partnership
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'5'} className="text-gray-700 font-Poppins">
                                                 One Person Company
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'6'} className="text-gray-700 font-Poppins">
                                                 Sole Proprietorship
                                             </option>
                                         </select>
                                         <p>Business Categary: </p>
                                         <select
                                             id="type-signup"
-                                            required=""
+                                            required
+                                            defaultValue={'DEFAULT'}
                                             className="text-sm rounded-md font-Poppins tracking-wide text-gray-400 focus:ring-blue-500 focus:border-blue-500 block border-2 border-gray-200 w-full h-8 m-auto"
                                         >
-                                            <option value="" disabled="" selected="" hidden="">
+                                            <option disabled value={'DEFAULT'} hidden>
                                                 Choose Business Category
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'1'} className="text-gray-700 font-Poppins">
                                                 Retail Store
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">Wholesaler</option>
-                                            <option className="text-gray-700 font-Poppins">Consultant</option>
-                                            <option className="text-gray-700 font-Poppins">Education</option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'2'} className="text-gray-700 font-Poppins">Wholesaler</option>
+                                            <option value={'3'} className="text-gray-700 font-Poppins">Consultant</option>
+                                            <option value={'4'} className="text-gray-700 font-Poppins">Education</option>
+                                            <option value={'5'} className="text-gray-700 font-Poppins">
                                                 Service Provider
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'6'} className="text-gray-700 font-Poppins">
                                                 Financial Services Provider
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'7'} className="text-gray-700 font-Poppins">
                                                 Health services provider
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'8'} className="text-gray-700 font-Poppins">
                                                 Restaurant / Bar / Wine Store
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">Utilities</option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'9'} className="text-gray-700 font-Poppins">Utilities</option>
+                                            <option value={'10'} className="text-gray-700 font-Poppins">
                                                 Travel and transport
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">Government</option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'11'} className="text-gray-700 font-Poppins">Government</option>
+                                            <option value={'12'} className="text-gray-700 font-Poppins">
                                                 Online store / Marketplace
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'13'} className="text-gray-700 font-Poppins">
                                                 Social media
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">
+                                            <option value={'14'} className="text-gray-700 font-Poppins">
                                                 Charity / NGO
                                             </option>
-                                            <option className="text-gray-700 font-Poppins">Others</option>
+                                            <option value={'15'} className="text-gray-700 font-Poppins">Others</option>
                                         </select>
                                         <p>Business Registration Number: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="Business_Registration_Number"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                         <p>Address: </p>
                                         <textarea
                                             className="border-2 border-gray-200 text-sm rounded-md p-2"
-                                            required=""
+                                            required
                                             name="Address"
-                                            id=""
                                             cols={30}
                                             rows={3}
                                             defaultValue={""}
@@ -157,32 +153,28 @@ const Biz_dash = () => {
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="zip"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                         <p>City: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="city"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                         <p>State: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="state"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                         <p>Country: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="country"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                     </div>
                                     {/* Contact details */}
@@ -195,32 +187,28 @@ const Biz_dash = () => {
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="name"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                         <p>Phone: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="tel"
                                             name="phone"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                         <p>Email: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="email"
                                             name="email"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                         <p>Job Title: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="jobTitle"
-                                            required=""
-                                            id=""
+                                            required
                                         />
                                     </div>
                                 </div>
