@@ -16,7 +16,7 @@ nav a.active {
   text-decoration: none;
   font-weight: bold;
   color: white;
-  background-color: red
+  background-color: #4C3CCE;
 }
 @tailwind base;
 @tailwind components;

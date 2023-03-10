@@ -1,7 +1,7 @@
 import React from 'react'
 import user_img from '../assets//images/user_img.png'
 
-const AddEmployeePopUp = () => {
+const Emp_list = () => {
     return (
 
         <div className="flex justify-between items-center h-28 bg-white my-5 ml-10 mr-20 py-4 pl-3 pr-6 border border-1 border-gray-300 rounded-md">
@@ -39,4 +39,4 @@ const AddEmployeePopUp = () => {
     )
 }
 
-export default AddEmployeePopUp
+export default Emp_list
