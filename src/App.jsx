@@ -15,9 +15,9 @@ import AddEmpPop from "./components/AddEmpPop";
 function App() {
   return (
     <div>
-<AddEmpPop />
 
-      {/* <Routes>
+
+      <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -26,7 +26,7 @@ function App() {
         <Route path='/billing' element={<Bill_dash />} />
         <Route path='/contact-us' element={<Contact_dash />} />
         <Route path='/refer' element={<Refer_dash />} />
-      </Routes> */}
+      </Routes>
     </div>
   );
 }
