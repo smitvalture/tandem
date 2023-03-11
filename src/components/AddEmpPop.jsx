@@ -2,8 +2,8 @@ import React from 'react'
 
 const AddEmpPop = (props) => {
     return (props.trigger) ? (
-        <div className='fixed top-0 right-0 flex justify-center items-center w-full h-screen'>
-            <div className='w-[600px] bg-gray-200/75'>
+        <div className='fixed top-0 right-0 flex justify-center items-center w-[calc(100%-15rem)] h-screen bg-gray-200/75'>
+            <div className='w-[600px]'>
 
                 <form method="post">
                     <div className="text-left my-6 bg-white py-14 px-20 rounded-3xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
@@ -54,9 +54,9 @@ const AddEmpPop = (props) => {
                                         Next
                                     </button>
                                     <button
+                                        onClick={() => props.setTrigger(false)}
                                         className="bg-white hover:bg-slate-100 text-[#696969] w-fit px-4 h-9 ml-2 rounded-md font-Poppins tracking-wide border-2 border-gray-300"
-                                        type="reset"
-                                        name="reg_cancle"
+                                        name="cancle"
                                     >
                                         Cancle
                                     </button>

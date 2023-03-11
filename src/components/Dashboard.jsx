@@ -1,9 +1,13 @@
-import React from 'react';
+import { useState } from 'react';
 import Dash_sidebar from './Dash_sidebar';
-import Popup from './AddEmpPop';
+import AddEmpPop from './AddEmpPop';
+import Popup from './Popup';
 
 
 const Dashboard = () => {
+
+    const [popUp, setPopUp] = useState(false);
+
     return (
         <div className='bg-gray-100 font-Poppins'>
             {/* Sidebar */}
@@ -32,6 +36,7 @@ const Dashboard = () => {
                         />
                     </div>
                     <button
+                        onClick={() => setPopUp(true)}
                         className="font-semibold ml-10 bg-[#028820] hover:bg-[#2c8f41] w-36 mt-4 text-white py-1 rounded-md "
                         type="submit"
                         id="add"
@@ -49,6 +54,7 @@ const Dashboard = () => {
                             No employee data available
                         </p>
                         <button
+                            onClick={() => setPopUp(true)}
                             className="w-fit px-5 py-2 mt-14 rounded-md text-white text-xs font-semibold bg-[#424770] hover:bg-[#4c5281]"
                             type="submit"
                             id="add2"
@@ -57,8 +63,12 @@ const Dashboard = () => {
                         </button>
                     </div>
 
-                    {/* <Popup trigger={true} /> */}
-                    
+                    <AddEmpPop trigger={popUp} setTrigger={setPopUp}/>
+                    {/* <Popup trigger={popUp} setTrigger={setPopUp}>
+                        <h1>Hello</h1>
+                        <p>This is popup</p>
+                    </Popup> */}
+
                 </div>
             </div>
         </div>
