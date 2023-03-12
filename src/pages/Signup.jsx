@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import logo from '../assets/images/tandem_logo.svg'
 import Alerts from '../components/Alerts';
@@ -8,7 +8,11 @@ import Alerts from '../components/Alerts';
 const Signup = () => {
 
     const [eye, setEye] = useState(false);
+    const [msg, setMsg] = useState("");
+
+    
     // const [ceye, csetEye] = useState(false);
+
 
 
 
@@ -75,11 +79,9 @@ const Signup = () => {
                         {/* Error message */}
 
                         <div>
-                            
-                            <Alerts msg="Success" des="Registration successful" type="success" closable />
-
-                            
-
+                            {
+                                msg && <Alerts msg="Success" des={msg} type="success" closable onClose={() => setMsg("")} />
+                            }
                         </div>
 
                         <button

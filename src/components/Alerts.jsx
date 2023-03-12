@@ -1,13 +1,13 @@
 import { Alert, Space } from 'antd';
+
+
 const Alerts = (props) => (
-  // <Space
-  //   direction="vertical"
-  //   style={{
-  //     width: '100%',
-  //   }}
-  // >
+
+  <Space
+    direction="vertical"
+  >
     <Alert
-      className='w-[287px] h-fit'
+      className='w-60 tab:w-64 lap:w-72 h-fit'
       message={props.msg}
       description={props.des}
       type={props.type}
@@ -16,6 +16,7 @@ const Alerts = (props) => (
 
     />
 
-  // </Space>
+  </Space>
+
 );
 export default Alerts;

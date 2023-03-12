@@ -12,7 +12,7 @@ import Alerts from '../components/Alerts';
 const Login = () => {
 
     // const [toggle, setToggle] = useState(false);
-    // const [error, setError] = useState("");
+    const [error, setError] = useState("");
 
     const [eye, setEye] = useState(false);
     // console.log(error);
@@ -60,12 +60,15 @@ const Login = () => {
                         </div>
 
                         {/* Error message */}
-                        <Alerts 
-                            msg="Error"
-                            des="You have an error while logging in."
-                            type="error"
-                            closable
-                        />
+                        {
+                            error && <Alerts
+                                msg="Error"
+                                des={error}
+                                type="error"
+                                closable
+                            />
+                        }
+
 
 
                         <button
