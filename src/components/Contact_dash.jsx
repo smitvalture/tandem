@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { IoLogoWhatsapp, IoIosMail } from "react-icons/io";
 import Dash_sidebar from './Dash_sidebar';
 
@@ -33,6 +34,7 @@ const Contact_dash = () => {
                                         </div>
                                     </div>
                                 </a>
+
                                 <a target="_blank" href="mailto:hello@tandem.com">
                                     <div className="left h-24 w-fit px-12 border border-1 border-[#151515] rounded-lg flex justify-center items-center">
                                         <div className="mr-4 border-2 border-gray-200 rounded-full">
@@ -78,7 +80,7 @@ const Contact_dash = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

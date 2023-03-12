@@ -5,8 +5,8 @@ const AddEmpPop = (props) => {
         <div className='fixed top-0 right-0 flex justify-center items-center w-[calc(100%-15rem)] h-screen bg-gray-200/75'>
             <div className='w-[600px]'>
 
-                <form method="post">
-                    <div className="text-left my-6 bg-white py-14 px-20 rounded-3xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
+                <div className="text-left my-6 bg-white py-14 px-20 rounded-3xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
+                    <form method="post">
                         <div className="grid grid-cols-2 space-y-1">
                             <h2 className="text-base font-semibold underline col-span-2 text-left pb-5">
                                 Add Employee
@@ -63,8 +63,8 @@ const AddEmpPop = (props) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     ) : "";
