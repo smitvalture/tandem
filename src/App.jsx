@@ -13,7 +13,6 @@ function App() {
   return (
     <div>
 
-
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
@@ -22,8 +21,7 @@ function App() {
         <Route path='/business-profile' element={<Biz_dash />} />
         <Route path='/billing' element={<Bill_dash />} />
         <Route path='/contact-us' element={<Contact_dash />} />
-        <Route path='/refer' element={<Refer_dash />} />
-        
+        <Route path='/refer' element={<Refer_dash />} />  
       </Routes>
     </div>
   );
