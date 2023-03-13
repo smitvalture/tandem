@@ -4,7 +4,7 @@ const Section1 = () => {
 
   return (
     <div className='hero_bg' >
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center pt-[58px]">
                 <h1 className="text-[#272746] text-4xl lap:text-7xl font-semibold text-center mt-36 lap:mt-40 w-72 lap:w-[573px]">
                     Save money on your payroll
                 </h1>

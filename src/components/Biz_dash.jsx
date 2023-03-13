@@ -31,40 +31,41 @@ const Biz_dash = () => {
                                         <h2 className="text-xl col-span-2 text-left my-3 pb-5">
                                             Company Details
                                         </h2>
-                                        <p>Company Name: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Company Name: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="companyName"
                                             required
                                         />
-                                        <p>Company Email: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Company Email: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="email"
                                             name="companyEmail"
                                             required
                                         />
-                                        <p>Company Phone: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Company Phone: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="tel"
                                             name="companyPhone"
                                             required
                                         />
-                                        <p>Company WebSite: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Company WebSite: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="url"
                                             name="CompanyWebSite"
                                             required
+                                            placeholder='jgajkghkajhdgk'
                                         />
-                                        <p>Business Type: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Business Type: </p>
                                         <select
                                             id="type-signup"
                                             required
                                             defaultValue={'DEFAULT'}
-                                            className="text-sm rounded-md font-Poppins tracking-wide text-gray-400 focus:ring-blue-500 focus:border-blue-500 block border-2 border-gray-200 w-full h-8 m-auto"
+                                            className="text-sm rounded-md font-Poppins tracking-wide text-gray-400 focus:ring-blue-500 focus:border-blue-500 block border-2 border-gray-200 w-full px-2 h-8 m-auto"
                                         >
                                             <option disabled value={'DEFAULT'} hidden>
                                                 Choose Business type
@@ -88,12 +89,12 @@ const Biz_dash = () => {
                                                 Sole Proprietorship
                                             </option>
                                         </select>
-                                        <p>Business Categary: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Business Categary: </p>
                                         <select
                                             id="type-signup"
                                             required
                                             defaultValue={'DEFAULT'}
-                                            className="text-sm rounded-md font-Poppins tracking-wide text-gray-400 focus:ring-blue-500 focus:border-blue-500 block border-2 border-gray-200 w-full h-8 m-auto"
+                                            className="text-sm rounded-md font-Poppins tracking-wide text-gray-400 focus:ring-blue-500 focus:border-blue-500 block border-2 border-gray-200 w-full px-2 h-8 m-auto"
                                         >
                                             <option disabled value={'DEFAULT'} hidden>
                                                 Choose Business Category
@@ -132,14 +133,14 @@ const Biz_dash = () => {
                                             </option>
                                             <option value={'15'} className="text-gray-700 font-Poppins">Others</option>
                                         </select>
-                                        <p>Business Registration Number: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Business Registration Number: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="Business_Registration_Number"
                                             required
                                         />
-                                        <p>Address: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Address: </p>
                                         <textarea
                                             className="border-2 border-gray-200 text-sm rounded-md p-2"
                                             required
@@ -148,28 +149,28 @@ const Biz_dash = () => {
                                             rows={3}
                                             defaultValue={""}
                                         />
-                                        <p>Zipcode: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Zipcode: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="zip"
                                             required
                                         />
-                                        <p>City: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>City: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="city"
                                             required
                                         />
-                                        <p>State: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>State: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="state"
                                             required
                                         />
-                                        <p>Country: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Country: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
@@ -182,28 +183,28 @@ const Biz_dash = () => {
                                         <h2 className="text-xl col-span-2 text-left pb-5 mt-3">
                                             Contact Details
                                         </h2>
-                                        <p>Name: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Name: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"
                                             name="name"
                                             required
                                         />
-                                        <p>Phone: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Phone: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="tel"
                                             name="phone"
                                             required
                                         />
-                                        <p>Email: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Email: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="email"
                                             name="email"
                                             required
                                         />
-                                        <p>Job Title: </p>
+                                        <p><span className='text-red-600 text-xl'>*</span>Job Title: </p>
                                         <input
                                             className="border-2 border-gray-200 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                             type="text"

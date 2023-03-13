@@ -11,14 +11,14 @@ const AddEmpPop = (props) => {
                             <h2 className="text-base font-semibold underline col-span-2 text-left pb-5">
                                 Add Employee
                             </h2>
-                            <p className="text-[#151515]">Name* : </p>
+                            <p className="text-[#151515]"><span className='text-red-600 text-xl'>*</span>Name: </p>
                             <input
                                 className="border-2 border-gray-300 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                 type="text"
                                 name="name"
                                 required
                             />
-                            <p className="text-[#151515]">Email* : </p>
+                            <p className="text-[#151515]"><span className='text-red-600 text-xl'>*</span>Email: </p>
                             <input
                                 className="border-2 border-gray-300 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                 type="email"
@@ -31,14 +31,14 @@ const AddEmpPop = (props) => {
                                 type="tel"
                                 name="phone"
                             />
-                            <p className="text-[#151515]">Job Title* : </p>
+                            <p className="text-[#151515]"><span className='text-red-600 text-xl'>*</span>Job Title: </p>
                             <input
                                 className="border-2 border-gray-300 text-sm rounded-md px-4 w-full h-8 placeholder:font-Poppins  placeholder:tracking-wide"
                                 type="text"
                                 name="job"
                                 required
                             />
-                            <p className="text-[#151515]">Subscription Plan* : </p>
+                            <p className="text-[#151515]"><span className='text-red-600 text-xl'>*</span>Subscription Plan: </p>
                             <select
                                 id="type-signup"
                                 required
