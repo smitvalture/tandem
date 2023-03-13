@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Dash_sidebar from './Dash_sidebar';
 import AddEmpPop from './AddEmpPop';
-import Popup from './Popup';
+import Emp_list from './Emp_list'
 
 
 const Dashboard = () => {
@@ -47,6 +47,7 @@ const Dashboard = () => {
                     <h2 className="text-sm text-[#687E96] font-semibold border border-1 border-gray-300 rounded-t-md bg-white my-5 ml-10 mr-20 pl-4 py-4">
                         Employee List
                     </h2>
+                    <Emp_list />
                     <div className="mx-auto flex flex-col items-center">
                         <p className="text-[#BBBBBB] mt-32 text-center text-xl">
                             Empty

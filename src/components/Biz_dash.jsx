@@ -58,7 +58,6 @@ const Biz_dash = () => {
                                             type="url"
                                             name="CompanyWebSite"
                                             required
-                                            placeholder='jgajkghkajhdgk'
                                         />
                                         <p><span className='text-red-600 text-xl'>*</span>Business Type: </p>
                                         <select
