@@ -9,8 +9,8 @@ const Header = () => {
 
 
     return (
-        <div className=''>
-            <nav className={`sticky p-5 lap:flex lap:justify-between lap:items-center duration-300 lap:transition-none hero_bg2`} id="navbar">
+        <div>
+            <nav className={`fixed w-full p-5 lap:flex lap:justify-between lap:items-center duration-300 lap:transition-none hero_bg2`} id="navbar">
                 <div className='max-w-[1240px]'>
                     <div className="flex justify-between items-center">
                         <Link to={"#mission"}><img className="inline mx-2 h-7 tab:h-8 lap:h-auto" href="#" src={logo} alt="tandem-img" /></Link>
