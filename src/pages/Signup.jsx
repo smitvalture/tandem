@@ -1,19 +1,17 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import { useState, useRef } from "react";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { Button, Form, Input } from 'antd';
+import { useState } from 'react';
 import logo from '../assets/images/tandem_logo.svg'
-import Alerts from '../components/Alerts';
-
-const Signup = () => {
-
-    const [eye, setEye] = useState(false);
-    const [msg, setMsg] = useState("");
-
-    
-    // const [ceye, csetEye] = useState(false);
+import { Link } from 'react-router-dom';
+import { Alert } from 'antd';
 
 
+
+const App = () => {
+    const [error, setError] = useState("");
+    const [msg, setMsg] = useState("")
+    const onFinish = (values) => {
+        console.log('Received values of form: ', values);
+    };
 
 
     return (
@@ -25,85 +23,112 @@ const Signup = () => {
 
             <section className="font-Poppins w-full h-[calc(100vh-78px)] flex flex-col justify-center items-center">
 
-                <div className='bg-gray-100 py-5 px-10 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
-                    <form
-                        method="post"
-                        className="registration-details flex flex-col items-center space-y-4 w-[290px]"
+                <div className='bg-gray-100 w-[320px] tab:w-[368px] lap:w-[400px] py-5 px-10 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
+                    <Form
+                        name="register"
+                        onFinish={onFinish}
+                        scrollToFirstError
                     >
 
-                        <h1 className='text-3xl lap:text-5xl font-semibold mb-5'>Sign Up</h1>
+                        <h1 className='text-3xl text-center lap:text-5xl font-bold mb-10'>Sign Up</h1>
 
-
-
-                        <input
-                            className="bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide outline-none border hover:border-1 hover:border-gray-700 "
-                            type="email"
+                        <Form.Item
                             name="email"
-                            required
-                            placeholder="Email"
-                        />
 
-                        <div className='flex justify-between items-center bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide border hover:border-1 hover:border-gray-700'>
-                            <input
-                                className='outline-none bg-transparent w-full'
-                                type={eye ? 'text' : 'password'}
-                                name="pwd"
-                                required
-                                placeholder="Create new password"
+                            rules={[
+                                {
+                                    type: 'email',
+                                    message: 'The input is not valid E-mail!',
+                                },
+                                {
+                                    required: true,
+                                    message: 'Please input your E-mail!',
+                                },
+                            ]}
+                        >
+                            <Input
+                                className='shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-72 lap:w-80 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide'
+                                placeholder='Email' />
+                        </Form.Item>
 
-                            />
-                            {
-                                eye ? <AiOutlineEye className='w-5 h-5 cursor-pointer' onClick={() => setEye(false)} /> : <AiOutlineEyeInvisible className='w-5 h-5 cursor-pointer' onClick={() => setEye(true)} />
-                            }
+                        <Form.Item
+                            name="password"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please input your password!',
+                                },
+                            ]}
+                            hasFeedback
+                        >
+                            <Input.Password
+                                className='shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-72 lap:w-80 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide'
+                                placeholder='New Password' />
+                        </Form.Item>
 
-                        </div>
-
-
-
-                        <div className='flex justify-between items-center bg-gray-50 hover:bg-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-64 lap:w-72 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide border hover:border-1 hover:border-gray-700'>
-                            <input
-                                className='outline-none bg-transparent w-full'
-                                type={eye ? 'text' : 'password'}
-                                name="pwd"
-                                required
-                                placeholder="Confirm new password"
-
-                            />
-                            {
-                                eye ? <AiOutlineEye className='w-5 h-5 cursor-pointer' onClick={() => setEye(false)} /> : <AiOutlineEyeInvisible className='w-5 h-5 cursor-pointer' onClick={() => setEye(true)} />
-                            }
-
-                        </div>
-
+                        <Form.Item
+                            name="confirm"
+                            dependencies={['password']}
+                            hasFeedback
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please confirm your password!',
+                                },
+                                ({ getFieldValue }) => ({
+                                    validator(_, value) {
+                                        if (!value || getFieldValue('password') === value) {
+                                            return Promise.resolve();
+                                        }
+                                        return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                                    },
+                                }),
+                            ]}
+                        >
+                            <Input.Password
+                                className='shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] text-sm rounded-md px-3 w-60 tab:w-72 lap:w-80 m-auto h-10 placeholder:font-Poppins placeholder:tracking-wide'
+                                placeholder='Confirm New Password' />
+                        </Form.Item>
 
                         {/* Error message */}
+                        {
+                            error && <Alert
+                                className='w-60 tab:w-72 lap:w-72 mb-7 h-fit'
+                                message={msg}
+                                type="error"
+                                showIcon
+                                closable
+                                onClose={() => setError("")}
+                            />
+                        }
 
-                        <div>
-                            {
-                                msg && <Alerts msg="Success" des={msg} type="success" closable onClose={() => setMsg("")} />
-                            }
-                        </div>
-
-                        <button
-                            className="bg-[#15213A] hover:bg-[#1e3055] shadow-lg shadow-blue-900/70 hover:shadow-blue-900/40 text-gray-300 w-60 tab:w-64 lap:w-72 h-9 mx-auto rounded-md font-Poppins tracking-wide"
-                            type="submit"
-                            name="login_button"
-
-                        >
-                            Sign up
-                        </button>
-
-                        <p className='text-sm'>Already have an account? <Link className='text-blue-900 hover:text-blue-600 hover:underline text-sm' to={"/login"}>Login here</Link></p>
-
-                    </form>
+                        {
+                            msg && <Alert
+                                className='w-60 tab:w-72 lap:w-72 mb-7 h-fit'
+                                message={msg}
+                                type="success"
+                                showIcon
+                                closable
+                                onClose={() => setError("")}
+                            />
+                        }
 
 
+                        <Form.Item>
+                            <Button
+                                className="login-form-button mt-5 bg-[#15213A] hover:bg-[#1e3055] shadow-lg shadow-blue-900/70 hover:shadow-blue-900/40 text-gray-300 w-60 tab:w-72 lap:w-80 h-9 mx-auto rounded-md font-Poppins tracking-wide border border-1 border-[#15213A]"
+                                htmlType="submit">
+                                Register
+                            </Button>
+                        </Form.Item>
 
+                        <Form.Item className='text-center'>
+                            Already have an account? <Link to="/login">Login here!</Link>
+                        </Form.Item>
+                    </Form>
                 </div>
-            </section>
-
-        </div>
-    )
-}
-
-export default Signup
+            </section >
+        </div >
+    );
+};
+export default App;

@@ -22,7 +22,7 @@ const App = () => {
             </Link>
 
             <section className='font-Poppins w-full h-[calc(100vh-78px)] bg-gray-200 flex justify-center items-center'>
-                <div className='bg-gray-100 py-5 px-10 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
+                <div className='bg-gray-100 w-[368px] py-5 px-10 rounded-lg shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]'>
                     <Form
                         name="normal_login"
                         className="login-form"
@@ -75,8 +75,7 @@ const App = () => {
                         {/* Error message */}
                         {
                             error && <Alert
-                                className='w-60 tab:w-64 lap:w-72 mb-7 h-fit'
-                                message="Error"
+                                className='w-60 tab:w-64 lap:w-72 mb-7 h-fit'                    
                                 description={error}
                                 type="error"
                                 showIcon
